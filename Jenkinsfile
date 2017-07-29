@@ -3,7 +3,7 @@ pickpeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                echo 'building'
             }
         }
     }
