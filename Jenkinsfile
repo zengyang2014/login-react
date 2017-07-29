@@ -1,5 +1,5 @@
 pickpeline {
-    agent { docker 'node:6.3' }
+    agent { docker 'node:7.10.1' }
     stages {
         stage('build') {
             steps {
