@@ -16,6 +16,14 @@ pipeline{
             stage('Deploy') {
                 steps {
                     echo 'Deploying....'
+
+                    retry(3) {
+                        sh './fake-deploy.sh'
+                    }
+
+                    timeout(time:1, unit:'MINUTES') {
+                        sh './fake-check.sh'
+                    }
                 }
             }
         }
